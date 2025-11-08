@@ -11,6 +11,240 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--main-font), sans-serif;
+  font-size: var(--font-size);
+  font-weight: var(--min__font-weight);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: var(--mainBgColor);
+  background-image: var(--first-gradient), var(--second-gradient), var(--third-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  inline-size: var(--main-width);
+  block-size: 368px;
+  margin: 100px 0;
+  border: 2px solid #000;
+  background-color: var(--mainBgColor);
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
+}
+
+.header a {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  text-decoration: none;
+}
+
+.header h1 {
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+}
+
+.card {
+  inline-size: var(--main-width);
+  margin-bottom: 50px;
+  background-color: var(--mainBgColor);
+  border: 2px solid #000;
+}
+
+.image-content {
+  position: relative;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.images {
+  width: 100%;
+}
+
+.save-image {
+  filter: sepia(100%)
+}
+
+.inspire-image {
+  filter: brightness(150%);
+}
+
+.proud-image {
+  filter: saturate(200%);
+}
+
+.enjoy-image {
+  filter: contrast(150%);
+}
+
+.finish-image {
+  filter: grayscale(0.6);
+}
+
+.memory-image {
+  filter: hue-rotate(-45deg);
+}
+
+.happy-image {
+  filter: opacity(2);
+}
+
+.work-image {
+  filter: invert(0.8);
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 50%;
+  mix-blend-mode: hard-light;
+  text-shadow: 2px 0 var(--mainBgColor);
+}
+
+@supports (-webkit-text-stroke: 1px var(--mainBgColor)) {
+  .label {
+    -webkit-text-stroke: 1px var(--mainBgColor);
+  }
+}
+
+.card h2 {
+  font-size: var(--font-size);
+  font-weight: var(--max__font-weight);
+  padding: 4px 10px;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+  line-height: 1.15;
+}
+
+.button {
+  position: relative;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  line-height: 0.9;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 #000;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+}
+
+.button__text {
+  color: var(--mainBgColor);
+  mix-blend-mode: difference;
+}
+
+.card-button {
+  display: flex;
+  justify-content: end;
+  margin: 0 25px 25px 0;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.card__like-button {
+  height: 38px;
+}
+
+.card__icon-button {
+  transition: border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: #000;
+}
+
+.save-button {
+  display: flex;
+  gap: 8px;
+  margin: 0 auto 100px;
+  padding: 15px 20px;
+  background-color: var(--mainBgColor);
+}
+
+.save-button svg {
+  mix-blend-mode: difference;
+  color: var(--mainBgColor);
+  width: 21px;
+}
+
+.dialog {
+  display: none;
+  flex-direction: column;
+  gap: 30px;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  width: clamp(341px, 90vw, 353px);
+  padding: 30px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
+
+.dialog[open] {
+  display: flex;
+}
+
+.dialog-info {
+  display: flex;
+  gap: 20px;
+}
+
+.dialog-info svg {
+  width: 39px;
+}
+
+.ok-button {
+  height: 38px;
+}
+
+@media (width <= 375px) {
+  .save-button {
+  flex-direction: column;
+}
 }
