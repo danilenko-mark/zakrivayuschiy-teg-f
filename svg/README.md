@@ -1,1 +1,1 @@
-https://danilenko-mark.github.io/zakrivayuschiy-teg-f/
+В этой папке будут храниться все необходимые SVG-файлы для сайта.
