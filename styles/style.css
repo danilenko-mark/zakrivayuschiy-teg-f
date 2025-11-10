@@ -201,6 +201,10 @@
   border-color: var(--accent-color);
 }
 
+.heart {
+  transform-origin: center;
+}
+
 .contour {
   transition: fill 0.1s linear;
 }
@@ -254,7 +258,6 @@
 
 .like-icon.is-liked .heart {
   animation: heart-animation 0.3s ease-in 0.1s;
-  transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
