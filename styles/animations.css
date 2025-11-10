@@ -11,19 +11,19 @@
 */
 
 @keyframes heart-animation {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.25);
-    }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
 }
 
 @keyframes sparks-animation {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 100;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
