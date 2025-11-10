@@ -276,6 +276,7 @@
 .save-icon {
   mix-blend-mode: difference;
   color: var(--mainBgColor);
+  flex-shrink: 0;
 }
 
 .open__save-icon {
